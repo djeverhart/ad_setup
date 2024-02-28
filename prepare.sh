@@ -5,7 +5,6 @@ sudo apt update -y && sudo apt -y install git realmd libnss-sss libpam-sss sssd 
 
 #join domain and start service
 sudo systemctl enable --now sssd
-sudo realm discover -v cnlab.local
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator 10.8.10.100
