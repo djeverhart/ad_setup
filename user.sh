@@ -1,11 +1,16 @@
 #!/bin/bash
-
+ 
 username=$PAM_USER
 administrators_group="admins"
-
-# Check if the user is a member of the administrators group
-if getent group $administrators_group | grep -q "\b${username}\b"; then
-    usermod -aG $administrators_group $username
+ 
+#sudo echo $administrators_group $username >> /opt/test.log
+ 
+if [[ -n "$username" && "$username" != "sddm" && "$username" != "lightdm" ]]; then
+ 
+sudo echo $administrators_group $username >> /opt/test.log
+sudo usermod -aG admins $username
+ 
+else
+        echo "Pam ignored" >> /opt/test.log
 fi
-
 exit 0
