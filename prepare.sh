@@ -11,9 +11,7 @@ sudo systemctl enable --now sssd
 
 #edit pam config
 cat <<EOF | sudo tee -a /etc/pam.d/common-session
-session required pam_unix.so
 session optional pam_sss.so
-session optional pam_systemd.so
 session required pam_mkhomedir.so
 #session optional pam_exec.so /opt/user.sh
 EOF
