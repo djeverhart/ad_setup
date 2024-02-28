@@ -4,10 +4,10 @@
 sudo apt update -y && sudo apt -y install git realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
 
 #join domain and start service
-sudo systemctl enable --now sssd
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator 10.8.10.100
+sudo systemctl enable --now sssd
 
 #edit pam config
 cat <<EOF | sudo tee -a /etc/pam.d/common-session
