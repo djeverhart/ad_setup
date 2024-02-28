@@ -26,4 +26,3 @@ echo '%admins ALL=(ALL:ALL) ALL' | sudo tee -a /etc/sudoers
 sudo rm /opt/user.sh
 sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/user.sh -o /opt/user.sh
 sudo chmod 755 /opt/user.sh
-echo '@reboot /opt/user.sh' | sudo tee -a /var/spool/cron/crontabs/root
