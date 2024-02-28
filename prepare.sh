@@ -1,14 +1,14 @@
 #!/usr/bin/bash
 
 #install dependencies
-sudo apt update -y && sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
+sudo apt update -y && sudo apt -y install git realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
 
 #join domain and start service
 sudo systemctl enable --now sssd
 sudo realm discover -v cnlab.local
-echo 'password' | sudo realm join -v -U administrator cnlab.local
+echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
-echo 'password' | sudo realm join -v -U administrator 10.8.10.100
+echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator 10.8.10.100
 
 #edit pam config
 cat <<EOF | sudo tee -a /etc/pam.d/common-session
@@ -24,5 +24,6 @@ sudo groupadd admins
 echo '%admins ALL=(ALL:ALL) ALL' | sudo tee -a /etc/sudoers
 
 #cron job for joining admins group and mounting network drive
+sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/prepare.sh -o /opt/prepare.sh
 sudo chmod 755 /opt/user.sh
 echo '@reboot /opt/user.sh' | sudo tee -a /var/spool/cron/crontabs/root
