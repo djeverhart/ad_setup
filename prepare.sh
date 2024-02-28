@@ -24,6 +24,7 @@ sudo groupadd admins
 echo '%admins ALL=(ALL:ALL) ALL' | sudo tee -a /etc/sudoers
 
 #cron job for joining admins group and mounting network drive
-sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/prepare.sh -o /opt/prepare.sh
+sudo rm /opt/user.sh
+sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/user.sh -o /opt/user.sh
 sudo chmod 755 /opt/user.sh
 echo '@reboot /opt/user.sh' | sudo tee -a /var/spool/cron/crontabs/root
