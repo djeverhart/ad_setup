@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+sudo rm -f /etc/resolv.conf
+sudo echo "nameserver 10.8.10.100" > /etc/resolv.conf
+
 #install dependencies
 sudo apt update -y && sudo apt -y install git realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
 
