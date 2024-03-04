@@ -2,7 +2,7 @@
 
 sudo rm -f /etc/resolv.conf
 sudo echo "nameserver 10.8.10.100" > /etc/resolv.conf
-sudo systemctl restart systemd-resolved
+#sudo systemctl restart systemd-resolved
 
 #install dependencies
 sudo apt update -y && sudo apt -y install git nfs-common bzip2 xz-utils curl realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
