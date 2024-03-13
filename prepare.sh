@@ -24,6 +24,9 @@ EOF
 sudo groupadd admins
 echo '%admins ALL=(ALL:ALL) ALL' | sudo tee -a /etc/sudoers
 
+#add truenas server to known hosts to avoid the ecdsa warning
+sudo ssh-keyscan -H $nas_server >> ~/.ssh/known_hosts
+
 #cron job for joining admins group and mounting network drive
 sudo rm /opt/user.sh
 sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/user.sh -o /opt/user.sh
