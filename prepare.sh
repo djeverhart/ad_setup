@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 sudo rm -f /etc/resolv.conf
-sudo echo "nameserver 10.8.10.101" > /etc/resolv.conf
+sudo echo "nameserver 10.8.10.200" > /etc/resolv.conf
 #sudo systemctl restart systemd-resolved
 
 #install dependencies
@@ -10,7 +10,7 @@ sudo apt update -y && sudo apt -y install git nfs-common bzip2 xz-utils curl rea
 #join domain and start service
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
-echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator 10.8.10.101
+echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator 10.8.10.200
 sudo systemctl enable --now sssd
 
 #edit pam config
