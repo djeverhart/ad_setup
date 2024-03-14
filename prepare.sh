@@ -6,6 +6,7 @@ sudo echo "nameserver 10.8.10.200" > /etc/resolv.conf
 
 #install dependencies
 sudo apt update -y && sudo apt -y install git nfs-common sshpass samba dolphin cifs-utils bzip2 xz-utils curl realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
+sudo mkdir /mnt/Sync
 
 #join domain and start service
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator cnlab.local
