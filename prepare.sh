@@ -2,6 +2,7 @@
 
 sudo rm -f /etc/resolv.conf
 sudo echo "nameserver 10.8.10.200" > /etc/resolv.conf
+sudo echo "nameserver 1.1.1.1“ >> /etc/resolv.conf
 #sudo systemctl restart systemd-resolved
 
 #install dependencies
@@ -9,10 +10,10 @@ sudo apt update -y && sudo apt -y install git nfs-common sshpass samba dolphin c
 sudo mkdir /mnt/Sync
 
 #join domain and start service
+sudo systemctl enable --now sssd
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
 echo 'DJ&TheQu1ps' | sudo realm join -v -U administrator 10.8.10.200
-sudo systemctl enable --now sssd
 
 #edit pam config
 cat <<EOF | sudo tee -a /etc/pam.d/common-session
