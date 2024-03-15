@@ -13,6 +13,6 @@ sudo usermod -aG admins $username
 
 sshpass -p "Snowsuit9-Breath0-Karaoke7-Frightful3" ssh fowner@10.8.10.199 "mkdir -p /mnt/Primary/Users/$username"
 sudo umount /mnt/Sync
-sudo mount -t cifs //10.8.10.199/Users/$username /mnt/Sync -o username=fowner,password=Snowsuit9-Breath0-Karaoke7-Frightful3 2>/tmp/mount_error.log
+sudo mount -t cifs //10.8.10.199/Users/$username /mnt/Sync -o username=fowner,password=Snowsuit9-Breath0-Karaoke7-Frightful3,filemode=0777,dirmode=0777 2>/tmp/mount_error.log
 
 fi
