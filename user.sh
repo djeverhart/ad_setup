@@ -2,7 +2,7 @@
 
 username=$PAM_USER
 sudo rm -f /etc/resolv.conf
-sudo sh -c 'echo "nameserver 10.8.10.150" > /etc/resolv.conf'
+sudo sh -c 'echo "nameserver 10.8.10.100" > /etc/resolv.conf'
 
 #sudo echo $administrators_group $username >> /opt/test.log
 
