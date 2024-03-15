@@ -11,7 +11,7 @@ if [[ -n "$username" && "$username" != "sddm" && "$username" != "lightdm" && "$u
 sudo sh -c 'echo admins $username >> /opt/test.log'
 sudo usermod -aG admins $username
 
-sshpass -p "Snowsuit9-Breath0-Karaoke7-Frightful3" ssh fowner@10.8.10.199 "sudo mkdir -p /mnt/Primary/Users/$username"
+sshpass -p "Snowsuit9-Breath0-Karaoke7-Frightful3" ssh fowner@10.8.10.199 "mkdir -p /mnt/Primary/Users/$username"
 sudo umount /mnt/Sync
 sudo mount -t cifs //10.8.10.199/User/$username /mnt/Sync -o username=fowner,password=Snowsuit9-Breath0-Karaoke7-Frightful3 2>/tmp/mount_error.log
 
