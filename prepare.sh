@@ -25,6 +25,7 @@ EOF
 #create admin group and add it to sudoers
 sudo groupadd admins
 echo '%admins ALL=(ALL:ALL) ALL' | sudo tee -a /etc/sudoers
+echo '%admins ALL=(ALL) NOPASSWD: /bin/mount, /bin/umount' | sudo tee -a /etc/sudoers
 
 #add truenas server to known hosts to avoid the ecdsa warning
 sudo ssh-keyscan -H 10.8.10.199 >> ~/.ssh/known_hosts
