@@ -12,7 +12,7 @@ sudo mkdir /mnt/Sync
 #join domain and start service
 echo 'DJ&TheQu1ps' | sudo realm join -v -U Administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
-echo 'DJ&TheQu1ps' | sudo realm join -v -U Administrator 10.8.10.200
+echo 'DJ&TheQu1ps' | sudo realm join -v -U Administrator 10.8.10.100
 sudo systemctl enable --now sssd
 
 #edit pam config
