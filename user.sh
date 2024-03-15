@@ -15,4 +15,4 @@ sshpass -p "Snowsuit9-Breath0-Karaoke7-Frightful3" ssh fowner@10.8.10.199 "sudo 
 sudo umount /mnt/Sync
 sudo mount -t cifs //10.8.10.199/User/$username /mnt/Sync -o username=fowner,password=Snowsuit9-Breath0-Karaoke7-Frightful3
 
-else
+fi
