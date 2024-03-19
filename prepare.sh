@@ -34,3 +34,5 @@ sudo ssh-keyscan -H 10.8.10.199 >> ~/.ssh/known_hosts
 sudo rm /opt/user.sh
 sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/user.sh -o /opt/user.sh
 sudo chmod 755 /opt/user.sh
+
+sudo rm -f /opt/run.sh
