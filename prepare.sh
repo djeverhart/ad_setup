@@ -31,8 +31,4 @@ echo '%admins ALL=(ALL) NOPASSWD: /bin/mount, /bin/umount' | sudo tee -a /etc/su
 sudo ssh-keyscan -H 10.8.10.199 >> ~/.ssh/known_hosts
 
 #cron job for joining admins group and mounting network drive
-sudo rm /opt/user.sh
-sudo curl https://raw.githubusercontent.com/djeverhart/ad_setup/main/user.sh -o /opt/user.sh
-sudo chmod 755 /opt/user.sh
-
 sudo rm -f /opt/run.sh
