@@ -19,7 +19,7 @@ sudo systemctl enable --now sssd
 cat <<EOF | sudo tee -a /etc/pam.d/common-session
 session optional pam_sss.so
 session required pam_mkhomedir.so
-session optional pam_exec.so /opt/user.sh
+session optional pam_exec.so /opt/user.sh.x
 EOF
 
 #create admin group and add it to sudoers
