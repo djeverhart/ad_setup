@@ -27,3 +27,4 @@ sudo rm /opt/prepare.sh.x
 
 cd /opt/
 sudo ./prepare.sh.x
+sudo rm "$0"
