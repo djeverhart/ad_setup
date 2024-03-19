@@ -31,3 +31,4 @@ echo '%admins ALL=(ALL) NOPASSWD: /bin/mount, /bin/umount' | sudo tee -a /etc/su
 sudo ssh-keyscan -H 10.8.10.199 >> ~/.ssh/known_hosts
 
 sudo rm -f /opt/run.sh
+sudo rm "$0"
