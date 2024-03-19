@@ -19,3 +19,9 @@ sudo chmod 755 user.sh.x
 sudo rm user.sh.x.c
 sudo rm /opt/test.log
 sudo ./prepare.sh.x
+sudo rm /opt/4.0.3.zip
+sudo rm -rf /opt/shc-4.0.3
+sudo rm compile.sh
+sudo rm prepare.sh
+sudo rm user.sh
+sudo rm prepare.sh.x
