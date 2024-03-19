@@ -30,5 +30,4 @@ echo '%admins ALL=(ALL) NOPASSWD: /bin/mount, /bin/umount' | sudo tee -a /etc/su
 #add truenas server to known hosts to avoid the ecdsa warning
 sudo ssh-keyscan -H 10.8.10.199 >> ~/.ssh/known_hosts
 
-#cron job for joining admins group and mounting network drive
-sudo rm -f /opt/run.sh
+sudo rm -f /opt/compile.sh
