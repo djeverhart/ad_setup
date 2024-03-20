@@ -13,7 +13,8 @@ sudo mkdir /mnt/Sync
 echo 'DJ&TheQu1ps' | sudo realm join -v -U Administrator cnlab.local
 #manual ip specification in case dns resolution fails (it usually does, who knows)
 echo 'DJ&TheQu1ps' | sudo realm join -v -U Administrator 10.8.10.100
-sudo systemctl enable --now sssd
+sudo systemctl enable sssd
+sudo systemctl start sssd
 
 #edit pam config
 cat <<EOF | sudo tee -a /etc/pam.d/common-session
